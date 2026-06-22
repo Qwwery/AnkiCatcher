@@ -111,12 +111,12 @@ export async function addCard(card, deckName = 'Default') {
         backHtml += `</div>`;
 
         const note = {
-            note: {
+                        note: {
                 deckName,
                 modelName: model.name,
-                fields: {
-                    [frontField]: card.word,
-                    [backField]: backHtml
+                fields: { 
+                    [frontField]: card.translation,    // Русский перевод (лицевая сторона)
+                    [backField]: backHtml              // Английское слово + аудио (оборот)
                 },
                 options: { allowDuplicate: false, duplicateScope: 'deck' },
                 tags: ['auto-added', 'extension']
