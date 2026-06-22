@@ -97,7 +97,7 @@ export async function addCard(card, deckName = 'Default') {
         const backField = model.fields[1];
 
         let backHtml = `<div style="font-size: 18px; text-align: center;">`;
-        backHtml += `<div style="margin-bottom: 10px;"><strong>${card.translation}</strong></div>`;
+        backHtml += `<div style="margin-bottom: 10px;"><strong>${card.word}</strong></div>`;  // Английское слово
 
         if (card.context) {
             backHtml += `<div style="font-size: 14px; color: #666; margin-bottom: 10px; font-style: italic;">${card.context}</div>`;
