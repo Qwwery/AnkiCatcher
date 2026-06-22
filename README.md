@@ -83,6 +83,7 @@ AnkiConnect is required for the extension to communicate with Anki:
 - **JavaScript (ES6+)**
 
 ### 📁 Project Structure
+```
 AnkiCatcher/
 ├── manifest.json # Extension configuration
 ├── background.js # Service worker
@@ -94,6 +95,7 @@ AnkiCatcher/
 └── popup/
 ├── popup.html # Extension popup UI
 └── popup.js # Popup logic
+```
 
 ### ⚙️ Settings
 
@@ -206,6 +208,7 @@ AnkiConnect необходим для связи расширения с Anki:
 - **JavaScript (ES6+)**
 
 ### 📁 Структура проекта
+```
 AnkiCatcher/
 ├── manifest.json # Конфигурация расширения
 ├── background.js # Service worker
@@ -217,6 +220,7 @@ AnkiCatcher/
 └── popup/
 ├── popup.html # UI popup расширения
 └── popup.js # Логика popup
+```
 
 ### ⚙️ Настройки
 
