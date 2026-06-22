@@ -4,54 +4,103 @@
     <meta charset="UTF-8">
     <style>
         body {
-            width: 350px;
+            width: 400px;
             padding: 15px;
             font-family: Arial, sans-serif;
         }
-        input {
+        h3 {
+            margin: 0 0 15px 0;
+            text-align: center;
+        }
+        input, select {
             width: 100%;
-            padding: 8px;
-            margin: 5px 0;
+            padding: 10px;
+            margin: 0 0 10px 0;
             box-sizing: border-box;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 4px;
         }
         button {
             width: 100%;
-            padding: 10px;
-            margin: 5px 0;
+            padding: 12px;
             background: #4CAF50;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
         }
         button:hover { background: #45a049; }
-        #output {
-            margin-top: 10px;
-            padding: 10px;
-            background: #f5f5f5;
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        #result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f9f9f9;
             border-radius: 4px;
-            min-height: 40px;
-            font-size: 12px;
-            white-space: pre-wrap;
+            display: none;
         }
-        h4 {
-            margin: 15px 0 5px 0;
-            font-size: 14px;
+        #result.show { display: block; }
+        .word {
+            font-size: 24px;
+            font-weight: bold;
             color: #333;
+            margin-bottom: 10px;
         }
+        .translation {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .audio-player { margin: 10px 0; }
+        .audio-player audio { width: 100%; }
+        .status {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .status.success { background: #d4edda; color: #155724; }
+        .status.error { background: #f8d7da; color: #721c24; }
+        .status.loading { background: #fff3cd; color: #856404; }
     </style>
 </head>
 <body>
-    <h3>🔧 Тест расширения</h3>
+    <h3>🎴 Anki Catcher</h3>
 
-    <h4>📝 Перевод:</h4>
-    <input type="text" id="word" placeholder="Введи слово" value="hello">
-    <button id="translate">Перевести</button>
+    <input type="text" id="word" placeholder="Введи слово или выдели текст на странице" autocomplete="off">
 
-    <h4>🔊 Аудио (Google TTS):</h4>
-    <button id="testAudio">Озвучить</button>
+    <label for="deck">Колода:</label>
+    <select id="deck">
+        <option value="Default">Default</option>
+    </select>
 
-    <div id="output">Нажми кнопку...</div>
+    <button id="addCard">Добавить карточку</button>
+
+    <div id="result">
+        <div class="word" id="displayWord"></div>
+        <div class="translation" id="displayTranslation"></div>
+        <div class="audio-player">
+            <audio id="audioPlayer" controls></audio>
+        </div>
+        <div id="status"></div>
+    </div>
 
     <script src="popup.js"></script>
 </body>
