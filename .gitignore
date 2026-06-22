@@ -1,1 +1,3 @@
-test-*.htmlserver.py.idea/
+test-*.html
+server.py
+.idea/
