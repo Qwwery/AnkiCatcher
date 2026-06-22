@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Yandex Anki Catcher",
+  "version": "0.1",
+  "description": "Расширение для быстрого создания карточек Anki",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "https://translate.googleapis.com/*",
+    "https://translate.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

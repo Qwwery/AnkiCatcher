@@ -1,0 +1,1 @@
+console.log('Yandex Anki Catcher загружен!');

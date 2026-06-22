@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            width: 350px;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover { background: #45a049; }
+        #output {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            min-height: 40px;
+            font-size: 12px;
+            white-space: pre-wrap;
+        }
+        h4 {
+            margin: 15px 0 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h3>🔧 Тест расширения</h3>
+
+    <h4>📝 Перевод:</h4>
+    <input type="text" id="word" placeholder="Введи слово" value="hello">
+    <button id="translate">Перевести</button>
+
+    <h4>🔊 Аудио (Google TTS):</h4>
+    <button id="testAudio">Озвучить</button>
+
+    <div id="output">Нажми кнопку...</div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
